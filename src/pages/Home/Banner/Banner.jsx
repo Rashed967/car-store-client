@@ -14,7 +14,7 @@ const Banner = () => {
 
 
         {/* overlay and text  */}
-        <div className="absolute left-0 top-0 w-full h-full text-white bg-gradient-to-r from-black/70">
+        <div className="absolute left-0 top-0 w-full h-full text-white bg-gradient-to-r from-black/70 rounded-lg">
           <div className='w-1/3 absolute left-6 transform translate-y-1/2 mt-24 space-y-4 text-left'>
             <h2 className='text-5xl font-bold'>Affordable Price For Car Servicing</h2>
             <p className='text-xl font-normal'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
@@ -27,7 +27,7 @@ const Banner = () => {
         </div>
 
         {/* slide button  */}
-        <img src={image1} className="w-full" />
+        <img src={image1} className="w-full  rounded-lg" />
         <div className="absolute flex transform space-x-3 right-16 bottom-20">
           <a href="#slide4" className="btn btn-circle">❮</a>
           <a href="#slide2" className="btn btn-circle">❯</a>
@@ -41,7 +41,7 @@ const Banner = () => {
 
         
         {/* overlay and text  */}
-        <div className="absolute left-0 top-0 w-full h-full text-white bg-gradient-to-r from-black/70">
+        <div className="absolute left-0 top-0 w-full h-full text-white bg-gradient-to-r from-black/70 rounded-lg">
           <div className='w-1/3 absolute left-6 transform translate-y-1/2 mt-24 space-y-4 text-left'>
             <h2 className='text-5xl font-bold'>Affordable Price For Car Servicing</h2>
             <p className='text-xl font-normal'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
@@ -56,7 +56,7 @@ const Banner = () => {
         {/* slide button  */}
   
 
-        <img src={image2} className="w-full" />
+        <img src={image2} className="w-full rounded-lg" />
         <div className="absolute flex transform space-x-3 right-16 bottom-20">
           <a href="#slide1" className="btn btn-circle">❮</a>
           <a href="#slide3" className="btn btn-circle">❯</a>
@@ -68,7 +68,7 @@ const Banner = () => {
 
         
         {/* overlay and text  */}
-        <div className="absolute left-0 top-0 w-full h-full text-white bg-gradient-to-r from-black/70">
+        <div className="absolute left-0 top-0 w-full h-full text-white bg-gradient-to-r from-black/70 rounded-lg">
           <div className='w-1/3 absolute left-6 transform translate-y-1/2 mt-24 space-y-4 text-left'>
             <h2 className='text-5xl font-bold'>Affordable Price For Car Servicing</h2>
             <p className='text-xl font-normal'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
@@ -81,7 +81,7 @@ const Banner = () => {
         </div>
 
         {/* slide button  */}
-        <img src={image3} className="w-full" />
+        <img src={image3} className="w-full rounded-lg" />
         <div className="absolute flex transform space-x-3 right-16 bottom-20">
           <a href="#slide2" className="btn btn-circle">❮</a>
           <a href="#slide4" className="btn btn-circle">❯</a>
@@ -94,7 +94,7 @@ const Banner = () => {
 
         
         {/* overlay and text  */}
-        <div className="absolute left-0 top-0 w-full h-full text-white bg-gradient-to-r from-black/70">
+        <div className="absolute left-0 top-0 w-full h-full text-white bg-gradient-to-r from-black/70 rounded-lg">
           <div className='w-1/3 absolute left-6 transform translate-y-1/2 mt-24 space-y-4 text-left'>
             <h2 className='text-5xl font-bold'>Affordable Price For Car Servicing</h2>
             <p className='text-xl font-normal'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
@@ -107,7 +107,7 @@ const Banner = () => {
         </div>
 
         {/* slide button  */}
-        <img src={image4} className="w-full" />
+        <img src={image4} className="w-full rounded-lg" />
         <div className="absolute flex transform space-x-3 right-16 bottom-20">
           <a href="#slide3" className="btn btn-circle">❮</a>
           <a href="#slide1" className="btn btn-circle">❯</a>
