@@ -1,3 +1,5 @@
+import { prototype } from "postcss/lib/previous-map";
+
 module.exports = {
   root: true,
   env: { browser: true, es2020: true, node : true },
@@ -15,6 +17,7 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
+      {prototype : false}
     ],
   },
 }
