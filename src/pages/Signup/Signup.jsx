@@ -3,34 +3,36 @@ import formImg from '../../assets/images/login/login.svg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
+const Signup = () => {
 
-const Login = () => {
+    const {createUser} = useContext(AuthContext)
 
-  
-    const {signIn} = useContext(AuthContext)
+    
 
-    // handle sign in 
-    const handlSignIn = (event) => {
+      // handle sign up
+      const handlSignup = (event) => {
         event.preventDefault()
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        console.log(email, password)
+
+              // create user with firebase 
         
-        // signin user 
-        signIn(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user)
-        })
-        .catch(error =>{
-            console.log(error)
-        })
-  
-        
+              createUser(email, password)
+              .then(userCredintial => {
+                const user = userCredintial.user.uid;
+                console.log(user)
+            }) 
+            .catch(error => {
+                const code = error.code;
+                const message = error.message;
+                console.log(code, message)
+            })
     }
     return (
-        <>
-            <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="w-1/2 pr-16">
                         <img className='' src={formImg} alt="" />
@@ -38,8 +40,14 @@ const Login = () => {
 
                     {/* login form  */}
                     <div className="card flex-shrink-0 w-1/2 py-16 px-10 border  bg-base-100">
-                        <h2 className='text-center text-3xl font-bold'>Login</h2>
-                        <form onSubmit={handlSignIn} className="card-body">
+                        <h2 className='text-center text-3xl font-bold'>Sign up</h2>
+                        <form onSubmit={handlSignup}  className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input name='name' type="text" placeholder="name" className="input input-bordered" required />
+                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -57,18 +65,17 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
 
-                                <input className="btn btn-error" type="submit" value="Sign in" />
+                                <input className="btn btn-error" type="submit" value="Sign up" />
                             </div>
                         </form>
-                        <p className='font-semibold my-3 text-left'>New to Car store?
-                            <Link to="/signup"><span className='text-blue-700 ml-1'>sign up</span></Link>
+                        <p className='font-semibold my-3 text-left'>Already have an account?
+                            <Link to="/login"><span className='text-blue-700 ml-1'>sign in</span></Link>
 
                         </p>
                     </div>
                 </div>
             </div>
-        </>
     );
 };
 
-export default Login;
+export default Signup;
