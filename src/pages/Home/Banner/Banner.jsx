@@ -27,7 +27,7 @@ const Banner = () => {
         </div>
 
         {/* slide button  */}
-        <img src={image1} className="w-full  rounded-lg" />
+        <img src={image1} className="w-full object-cover object-top rounded-lg" />
         <div className="absolute flex transform space-x-3 right-16 bottom-20">
           <a href="#slide4" className="btn btn-circle">❮</a>
           <a href="#slide2" className="btn btn-circle">❯</a>
@@ -56,7 +56,7 @@ const Banner = () => {
         {/* slide button  */}
   
 
-        <img src={image2} className="w-full rounded-lg" />
+        <img src={image2} className="w-full object-cover  object-top rounded-lg" />
         <div className="absolute flex transform space-x-3 right-16 bottom-20">
           <a href="#slide1" className="btn btn-circle">❮</a>
           <a href="#slide3" className="btn btn-circle">❯</a>
@@ -81,7 +81,7 @@ const Banner = () => {
         </div>
 
         {/* slide button  */}
-        <img src={image3} className="w-full rounded-lg" />
+        <img src={image3} className="w-full object-cover  object-top rounded-lg" />
         <div className="absolute flex transform space-x-3 right-16 bottom-20">
           <a href="#slide2" className="btn btn-circle">❮</a>
           <a href="#slide4" className="btn btn-circle">❯</a>
@@ -107,7 +107,7 @@ const Banner = () => {
         </div>
 
         {/* slide button  */}
-        <img src={image4} className="w-full rounded-lg" />
+        <img src={image4} className="w-full rounded-lg object-cover  object-top" />
         <div className="absolute flex transform space-x-3 right-16 bottom-20">
           <a href="#slide3" className="btn btn-circle">❮</a>
           <a href="#slide1" className="btn btn-circle">❯</a>

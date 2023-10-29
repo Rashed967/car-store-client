@@ -5,6 +5,9 @@ import Home from "../pages/Home/Home/Home"
 import Login from "../pages/Login/Login"
 import Signup from "../pages/Signup/Signup"
 import Checkout from "../pages/Checkout/Checkout"
+import ManageOrders from "../pages/ManageOrders/ManageOrders"
+import PrivetRoute from "../PrivetRoute/PrivetRoute"
+import EditService from "../pages/ManageOrders/EditService"
 
 const router = createBrowserRouter([
     {
@@ -27,6 +30,15 @@ const router = createBrowserRouter([
           path : "checkout/:id",
           element : <Checkout />,
           loader : ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path : "manageOrders",
+          element : <PrivetRoute><ManageOrders /></PrivetRoute>
+        },
+        {
+          path : "editService/:id",
+          element : <PrivetRoute><EditService /></PrivetRoute>,
+          // loader : ({params}) => fetch(`http://localhost:5000/checkout/${}`)
         }
       ]
     }
