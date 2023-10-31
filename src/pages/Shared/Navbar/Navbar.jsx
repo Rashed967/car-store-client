@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../../assets/logo.svg'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Navbar = () => {
-
+  const navigate = useNavigate()
   const {user, logOut} = useContext(AuthContext)
   // console.log(user)
 
@@ -12,6 +12,9 @@ const Navbar = () => {
     logOut()
     .then(data => {
       // console.log(data)
+      localStorage.removeItem('car-store-access-token')
+      navigate("login")
+
     })
     .catch(error => {
       console.error(error)
