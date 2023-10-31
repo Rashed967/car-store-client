@@ -12,7 +12,7 @@ const Services = () => {
         })
     },[])
 
-    console.log(services)
+
     return (
         <>
         <div className='md:w-1/2  text-center mx-auto mt-6'>
