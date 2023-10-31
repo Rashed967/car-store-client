@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import formImg from '../../assets/images/login/login.svg'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2'
 
 
 const Login = () => {
+    const navigate = useNavigate()
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    console.log(from)
 
   
     const {signIn} = useContext(AuthContext)
@@ -29,7 +33,8 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
-            }
+                }
+                navigate(from, {replace : true})
         })
         .catch(error =>{
             console.log(error)
