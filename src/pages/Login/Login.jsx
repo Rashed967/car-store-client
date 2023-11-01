@@ -33,23 +33,26 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
-                  const loggedUser = {
-                    email : user.email
-                  }
 
-                  fetch('http://localhost:5000/jwt', {
+                //   creta email object 
+            const loggedUser = {
+                email :user.email
+            }
+
+                // send email to server and get a token and save that on localStorage
+
+                fetch('http://localhost:5000/jwt', {
                     method : "POST",
                     headers : {'content-type' : 'application/json'},
                     body : JSON.stringify(loggedUser)
-                  })
-                  .then(res => res.json())
-                  .then(data => {
-                    console.log(data)
-                    // set token to localStorage 
-                    localStorage.setItem('car-store-access-token', data.token)
-                  })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem('car-store-token', data.token)
+                })
+
+                  navigate(from, {replace : true})
                 }
-                navigate(from, {replace : true})
         })
         .catch(error =>{
             console.log(error)

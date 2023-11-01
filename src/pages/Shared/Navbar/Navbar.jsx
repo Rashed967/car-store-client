@@ -12,9 +12,7 @@ const Navbar = () => {
     logOut()
     .then(data => {
       // console.log(data)
-      localStorage.removeItem('car-store-access-token')
-      navigate("login")
-
+      localStorage.removeItem('car-store-token')
     })
     .catch(error => {
       console.error(error)

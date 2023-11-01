@@ -3,8 +3,11 @@ import PageBanner from '../Shared/PageBanner/PageBanner';
 import bannerImg from '../../assets/images/services/4.jpg'
 import ManageOrderCard from './ManageOrderCard';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { Navigate, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ManageOrders = () => {
+  const navigate = useNavigate()
 
     const {user, loading} = useContext(AuthContext)
     const [bookings, setBookings] = useState([])
@@ -15,20 +18,33 @@ const ManageOrders = () => {
 
     const url = `http://localhost:5000/checkout?email=${user?.email}`
 
-
     useEffect(() => {
-        fetch(url)
+        fetch(url, {
+          headers : {
+            authorization : `Bearer ${localStorage.getItem('car-store-token')}`
+          }
+        })
         .then(res => res.json())
         .then(data => {
-          setBookings(data)
+          if(! data.error){
+           return setBookings(data)
+          }
+
+          else{
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+            })
+            navigate("/")
+          }
+      
         })
         .catch(error => {
             console.error(error)
         })
 
-    },[url, bookings, fetch])
-
-
+    },[url])
 
 
 
@@ -58,12 +74,13 @@ const ManageOrders = () => {
       {/* row 1 */}
 
       {
-        bookings.map(booking => <ManageOrderCard
+         bookings.map(booking => <ManageOrderCard
             key={booking._id}
             booking={booking}
             bookings={bookings}
             setBookings={setBookings}
             />)
+           
       }
    
     </tbody>
